@@ -85,6 +85,7 @@
   border: none;
   opacity: 100%;
   transition: opacity 0.3s ease;
+  text-transform: uppercase;
 }
 
 .theme-menu__button:disabled {
@@ -158,6 +159,7 @@
     1px 0 var(--bg-color, #ffffff), 0 -1px var(--bg-color, #ffffff);
   opacity: 50%;
   mix-blend-mode: hard-light;
+  z-index: 1;
 }
 
 @supports (
@@ -208,6 +210,7 @@
   box-shadow: none;
   transition: box-shadow 0.3s ease;
   z-index: 0;
+  cursor: pointer;
 }
 
 .button::after {
@@ -306,15 +309,15 @@
 }
 
 dialog {
-  position: fixed;
-  inset: 0;
-  font-family: var(--accent-font, "PressStart2P", fantasy);
+  padding: 0;
+  width: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: var(--font-accent);
   font-size: 14px;
-  color: var(--text-color, #000000);
-  background-color: var(--bg-color, #ffffff);
-  border: 2px solid var(--text-color, #000000);
-  padding: 30px;
-  min-inline-size: 353px;
+  line-height: 150%;
+  text-transform: uppercase;
+  border: 2px solid var(--font-color);
 }
 
 dialog::backdrop {
@@ -323,20 +326,18 @@ dialog::backdrop {
 }
 
 .dialog-window {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  padding: 30px 41px;
   gap: 30px;
 }
 
 .dialog-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   justify-content: start;
   align-items: center;
-  line-height: 21px;
-  gap: 15px;
+  gap: 20px;
 }
 
 .dialog-floppy {
@@ -347,7 +348,8 @@ dialog::backdrop {
 }
 
 .dialog-text {
-  max-inline-size: 234px;
+ 
+  font-family: var(--accent-font, "PressStart2P", fantasy);
 }
 
 .submit-button {
@@ -384,32 +386,35 @@ dialog::backdrop {
 
 .uppercase-text {
   text-transform: uppercase;
-}
-
-.blury {
-  filter: blur(5px);
+  z-index: 1;
 }
 
 .brightness {
   filter: brightness(200%);
 }
 
+.blury {
+  filter: blur(5px);
+}
+
 .contrast {
   filter: contrast(50%);
 }
 
-.greyscale {
-  filter: grayscale(100%);
+.multiFilters {
+  filter: invert(100%) brightness(100%) saturate(50%) opacity(80%);
 }
 
 .sepia {
   filter: sepia(50%);
 }
 
-.hue {
-  filter: hue-rotate(180deg);
+.greyscale {
+  filter: grayscale(100%);
 }
 
-.multiFilters {
-  filter: invert(100%) brightness(100%) saturate(50%) opacity(80%);
-}
+
+
+
+
+
