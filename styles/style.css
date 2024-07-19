@@ -317,7 +317,7 @@ dialog {
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  border: 2px solid var(--font-color);
+  border: 2px solid currentColor;
 }
 
 dialog::backdrop {
